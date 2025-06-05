@@ -1,0 +1,124 @@
+.about-section {
+  padding: var(--spacing-16) 0;
+  background-color: white;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+}
+
+.about-title {
+  color: var(--texto-escuro);
+  margin-bottom: var(--spacing-4);
+}
+
+.title-underline {
+  width: 6rem;
+  height: 0.25rem;
+  background-color: var(--amarelo);
+  margin: 0 auto var(--spacing-6);
+}
+
+.about-description {
+  font-size: var(--text-lg);
+  color: #4B5563;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: grid;
+  gap: var(--spacing-12);
+}
+
+@media (min-width: 768px) {
+  .about-content {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+.about-image-container {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.about-image:hover {
+  transform: scale(1.05);
+}
+
+.content-title {
+  font-size: var(--text-2xl);
+  font-weight: bold;
+  color: var(--texto-escuro);
+  margin-bottom: var(--spacing-4);
+}
+
+.content-text {
+  color: #374151;
+  margin-bottom: var(--spacing-6);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-8);
+}
+
+.value-card {
+  padding: var(--spacing-4);
+  border-radius: 0.5rem;
+}
+
+.value-card.blue {
+  background-color: rgba(30, 64, 175, 0.1);
+}
+
+.value-card.green {
+  background-color: rgba(45, 90, 39, 0.1);
+}
+
+.value-card.yellow {
+  background-color: rgba(252, 211, 77, 0.1);
+}
+
+.value-card.light-blue {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.value-title {
+  font-weight: bold;
+  margin-bottom: var(--spacing-2);
+}
+
+.value-card.blue .value-title {
+  color: var(--azul-royal);
+}
+
+.value-card.green .value-title {
+  color: var(--verde);
+}
+
+.value-card.yellow .value-title {
+  color: var(--texto-escuro);
+}
+
+.value-card.light-blue .value-title {
+  color: var(--azul-claro);
+}
+
+.value-text {
+  font-size: var(--text-sm);
+  color: #374151;
+} 

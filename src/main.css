@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-texto-escuro;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  a {
+    @apply text-azul-royal hover:text-azul-claro transition-colors duration-300;
+  }
+  button {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-azul-royal text-white px-6 py-3 rounded-md hover:bg-azul-claro transition-colors duration-300;
+  }
+  .btn-secondary {
+    @apply bg-verde text-white px-6 py-3 rounded-md hover:bg-verde-claro transition-colors duration-300;
+  }
+  .btn-outline {
+    @apply border-2 border-azul-royal text-azul-royal px-6 py-3 rounded-md hover:bg-azul-royal hover:text-white transition-colors duration-300;
+  }
+  .container-section {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
+  }
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300;
+  }
+  .nav-link {
+    @apply text-white hover:text-amarelo-suave transition-colors duration-300;
+  }
+}

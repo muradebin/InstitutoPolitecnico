@@ -1,0 +1,45 @@
+:root {
+  /* Cores principais */
+  --verde: #007A33;
+  --verde-claro: #339966;
+  --azul-royal: #1E40AF;
+  --azul-claro: #3B82F6;
+  --amarelo-suave: #FCD34D;
+  
+  /* Cores de texto */
+  --texto-escuro: #1F2937;
+  --texto-claro: #F9FAFB;
+  
+  /* Fontes */
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-serif: Georgia, Cambria, serif;
+  
+  /* Tamanhos de fonte */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  
+  /* Espaçamentos */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  
+  /* Breakpoints */
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
+} 
