@@ -1,9 +1,80 @@
+:root {
+  --verde: #0a6c44;
+  --verde-claro: #14985a;
+  --amarelo-suave: #ffcc00;
+}
+
+.topbar {
+  background-color: white;
+  color: black;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  max-width: 1280px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* permite quebrar em linhas se precisar */
+  gap: 0.5rem; /* espaçamento entre linhas quando quebrar */
+}
+/* Ajustar itens da esquerda e direita para caber no mobile */
+.topbar-left,
+.topbar-right {
+  display: flex;
+  gap: 1rem; /* reduzir um pouco o gap no mobile */
+  align-items: center;
+  flex-wrap: wrap; /* permitir quebra interna se necessário */
+}
+
+.topbar-left {
+  justify-content: flex-start;
+}
+
+.topbar-right {
+  justify-content: flex-end;
+  color: black;
+}
+
+.topbar-left a,
+.topbar-right a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.topbar-left a:hover,
+.topbar-right a:hover {
+  color: var(--verde);
+}
+
 .navbar {
   background-color: var(--verde);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 50;
+  transition: top 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Classe adicionada quando a navbar deve ficar fixa */
+.navbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* Animação de deslizar para baixo */
+@keyframes slideDown {
+  from {
+    top: -5rem;
+  }
+  to {
+    top: 0;
+  }
 }
 
 .navbar-container {
@@ -54,6 +125,7 @@
   font-weight: 700;
   font-size: 1.125rem;
   display: none;
+  line-height: 1.2;
 }
 
 @media (min-width: 768px) {
@@ -75,9 +147,29 @@
 }
 
 .nav-link {
+  position: relative;
   color: white;
   font-weight: 500;
   transition: color 0.3s;
+  padding-bottom: 0.25rem;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--amarelo-suave);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-link:hover {
@@ -102,6 +194,8 @@
   padding: 0.5rem;
   border-radius: 0.375rem;
   color: white;
+  background: transparent;
+  border: none;
 }
 
 .menu-toggle:hover {
@@ -140,8 +234,130 @@
   font-weight: 500;
   font-size: 1rem;
   transition: color 0.3s;
+  text-decoration: none;
 }
 
 .mobile-nav-link:hover {
   color: var(--amarelo-suave);
-} 
+}
+
+
+
+/* Mobile */
+@media (max-width: 640px) {
+  .topbar {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Empilhar as seções para economizar espaço */
+  .topbar-left,
+  .topbar-right {
+    flex-basis: 100%;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  
+  /* Links menores e mais compactos */
+  .topbar-left a,
+  .topbar-right a {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}
+
+/* Tablet e acima */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .topbar {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  .topbar-left,
+  .topbar-right {
+    gap: 1rem;
+  }
+}
+
+
+
+
+/* Sticky navbar ao rolar */
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  animation: slideDown 0.3s ease-in-out forwards;
+}
+
+/* Espaço extra para não sobrepor conteúdo */
+body {
+ 
+}
+
+/* Animação suave */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-content {
+    padding: 0.5rem;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--verde);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-nav-link {
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .mobile-nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 0.8rem;
+  }
+
+  .logo-image {
+    width: 35px;
+    height: 35px;
+  }
+}

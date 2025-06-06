@@ -1,0 +1,109 @@
+.rectory-section {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+.container {
+  margin-top: 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  text-align: center;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.rectory-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* .member-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+} */
+
+.member-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  min-height: 550px; /* <-- aumenta a altura mínima do card */
+  display: flex;
+  flex-direction: column;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+}
+
+/* .member-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+} */
+
+.member-image {
+  width: 100%;
+  height: 350px; /* <-- aumenta a altura da imagem */
+  overflow: hidden;
+}
+
+/* .member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info {
+  padding: 1.5rem;
+}
+
+.member-info h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.member-info h4 {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+}
+
+.member-info p {
+  color: #777;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .rectory-members {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+} 

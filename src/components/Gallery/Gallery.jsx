@@ -1,7 +1,7 @@
 import React from 'react';
 import campus1 from '../../assets/campus-1.jpg';
 import campus2 from '../../assets/campus-2.jpg';
-import heroBg from '../../assets/hero-bg.jpg';
+import heroBg from '../../assets/hero-bg1.jpg';
 import './Gallery.css';
 
 const Gallery = () => {

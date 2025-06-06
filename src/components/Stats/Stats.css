@@ -1,0 +1,152 @@
+.stats-section {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(rgba(30, 39, 86, 0.95), rgba(30, 39, 86, 0.95)),
+              url('/src/assets/stats-bg.jpg') center/cover no-repeat fixed;
+  color: white;
+  overflow: hidden;
+}
+
+.stats-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(30, 39, 86, 0.8) 0%, rgba(30, 39, 86, 0.95) 100%);
+}
+
+.stats-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  z-index: 1;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.stats-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.stats-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.stats-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stats-icon-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.stats-icon {
+  font-size: 2.5rem;
+  color: var(--amarelo);
+}
+
+.stats-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stats-content h3 {
+  font-size: 1.25rem;
+  color: var(--amarelo);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.stats-content p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* Animação de entrada */
+.stats-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.stats-card:nth-child(1) { animation-delay: 0.1s; }
+.stats-card:nth-child(2) { animation-delay: 0.2s; }
+.stats-card:nth-child(3) { animation-delay: 0.3s; }
+.stats-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 4rem 0;
+  }
+
+  .stats-header h2 {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .stats-number {
+    font-size: 2.5rem;
+  }
+
+  .stats-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Efeito de glassmorphism para navegadores modernos */
+@supports (backdrop-filter: blur(10px)) {
+  .stats-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+} 
